@@ -8,6 +8,8 @@ namespace APKProfiler
         //Decompiler Fields
         private string pathToManifest;
         private Manifest manifest;
+        private string pathToSmali;
+        private Smali smali;
 
         //Getters
         public string PathToManifest
@@ -15,7 +17,13 @@ namespace APKProfiler
             get { return pathToManifest; }
             set { pathToManifest = value; }
         }
+        public string PathToSmali
+        {
+            get { return pathToSmali; }
+            set { pathToSmali = value; }
+        }
         public Manifest Manifest => manifest;
+        public Smali Smali => smali;
         public Decompiler()
         {
             pathToManifest = null;
@@ -49,6 +57,12 @@ namespace APKProfiler
             manifest = new Manifest();
             manifest.ParseManifest(pathToManifest);
 
+        }
+
+        public void AnalyzeSmali(string pathToSmali)
+        {
+            smali = new Smali();
+            smali.ParseSmali(pathToSmali);
         }
     }
 }

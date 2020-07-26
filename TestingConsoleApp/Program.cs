@@ -37,6 +37,12 @@ namespace TestingConsoleApp
                     decompiler.Manifest.Receivers.ForEach(Console.WriteLine);
                     Console.WriteLine("\nPROVIDERS");
                     decompiler.Manifest.Providers.ForEach(Console.WriteLine);
+
+                    decompiler.PathToSmali = Path.Combine(Environment.CurrentDirectory, "app");
+                    decompiler.AnalyzeSmali(decompiler.PathToSmali);
+                    Console.WriteLine("\nAPI CALLS");
+                    decompiler.Smali.ApiCalls.ForEach(Console.WriteLine);
+
                 }
                 else if (choice == 2)
                 {
