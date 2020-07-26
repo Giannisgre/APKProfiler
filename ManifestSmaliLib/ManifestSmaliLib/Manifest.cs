@@ -35,18 +35,18 @@ namespace ManifestSmaliLib
             compileSdkVersion = null;
         }
 
-        public void parseManifest(string manifestFilePath)
+        public void ParseManifest(string manifestFilePath)
         {
             try
             {
                 xElement = XElement.Load(manifestFilePath);
-                getAllFromFile(xElement);
+                GetAllFromFile(xElement);
             }
             catch (System.IO.FileNotFoundException) { }
             catch (System.IO.DirectoryNotFoundException) { }
         }
 
-        private void getAllFromFile(XElement xmlRoot)
+        private void GetAllFromFile(XElement xmlRoot)
         {
             XNamespace android = "http://schemas.android.com/apk/res/android";
             List<string> tmpList = new List<string>();
