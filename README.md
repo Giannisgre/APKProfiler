@@ -1,4 +1,4 @@
-# ManifestSmaliLib
+# APKProfiler
 Functionality of the library:
 1. Decompile an apk using apktool by giving the absolute path to the apk, including the apk name. After the process completes, properties from the produced AndroidManifest are extracted.
 2. Extract properties from an AndroidManifest.xml file directly by providing the absolute path of the file, without the file name.
