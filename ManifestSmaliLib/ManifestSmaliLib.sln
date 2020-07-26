@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30320.27
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManifestSmaliLib", "ManifestSmaliLib\ManifestSmaliLib.csproj", "{725B3FED-AEE0-463F-91D4-243FC5736157}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingConsoleApp", "TestingConsoleApp\TestingConsoleApp.csproj", "{646BF09E-A5AE-4E06-8BFC-908140FA179E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{725B3FED-AEE0-463F-91D4-243FC5736157}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{725B3FED-AEE0-463F-91D4-243FC5736157}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{725B3FED-AEE0-463F-91D4-243FC5736157}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{725B3FED-AEE0-463F-91D4-243FC5736157}.Release|Any CPU.Build.0 = Release|Any CPU
+		{646BF09E-A5AE-4E06-8BFC-908140FA179E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{646BF09E-A5AE-4E06-8BFC-908140FA179E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{646BF09E-A5AE-4E06-8BFC-908140FA179E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{646BF09E-A5AE-4E06-8BFC-908140FA179E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FF00D1D5-4C83-438C-883D-FA8AC447794D}
+	EndGlobalSection
+EndGlobal
