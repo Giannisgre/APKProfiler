@@ -56,7 +56,6 @@ namespace APKProfiler
         {
             manifest = new Manifest();
             manifest.ParseManifest(pathToManifest);
-
         }
 
         public void AnalyzeSmali(string pathToSmali)
