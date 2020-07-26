@@ -1,9 +1,0 @@
-C:\Users\Grev\Documents\Visual Studio 2019\Projects\ManifestSmaliLib\ManifestSmaliLib\bin\Debug\netcoreapp3.1\ManifestSmaliLib.deps.json
-C:\Users\Grev\Documents\Visual Studio 2019\Projects\ManifestSmaliLib\ManifestSmaliLib\bin\Debug\netcoreapp3.1\ManifestSmaliLib.dll
-C:\Users\Grev\Documents\Visual Studio 2019\Projects\ManifestSmaliLib\ManifestSmaliLib\bin\Debug\netcoreapp3.1\ManifestSmaliLib.pdb
-C:\Users\Grev\Documents\Visual Studio 2019\Projects\ManifestSmaliLib\ManifestSmaliLib\obj\Debug\netcoreapp3.1\ManifestSmaliLib.csprojAssemblyReference.cache
-C:\Users\Grev\Documents\Visual Studio 2019\Projects\ManifestSmaliLib\ManifestSmaliLib\obj\Debug\netcoreapp3.1\ManifestSmaliLib.AssemblyInfoInputs.cache
-C:\Users\Grev\Documents\Visual Studio 2019\Projects\ManifestSmaliLib\ManifestSmaliLib\obj\Debug\netcoreapp3.1\ManifestSmaliLib.AssemblyInfo.cs
-C:\Users\Grev\Documents\Visual Studio 2019\Projects\ManifestSmaliLib\ManifestSmaliLib\obj\Debug\netcoreapp3.1\ManifestSmaliLib.csproj.CoreCompileInputs.cache
-C:\Users\Grev\Documents\Visual Studio 2019\Projects\ManifestSmaliLib\ManifestSmaliLib\obj\Debug\netcoreapp3.1\ManifestSmaliLib.dll
-C:\Users\Grev\Documents\Visual Studio 2019\Projects\ManifestSmaliLib\ManifestSmaliLib\obj\Debug\netcoreapp3.1\ManifestSmaliLib.pdb
