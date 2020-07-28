@@ -1,6 +1,6 @@
 # APKProfiler
 Functionality of the library:
-1. Decompile an apk using apktool by giving the absolute path to the apk, including the apk name. After the process completes, properties from the produced AndroidManifest are extracted. The resulting decompiled apk can be found in TestingConsoleApp/bin/Debug/netcoreapp3.1/app. Added extraction of API Calls from smali files.
+1. Decompile an apk using apktool by giving the absolute path to the apk, including the apk name. After the process completes, properties from the produced AndroidManifest are extracted. Added extraction of API Calls from smali files. Added write to file functions. Added X509Certificate information extraction.
 2. Extract properties from an AndroidManifest.xml file directly by providing the absolute path of the file, without the file name.
 
 Screenshots corresponding to the first functionality.
@@ -11,6 +11,9 @@ Screenshots corresponding to the first functionality.
 Screenshots concerning API Calls.
 ![ScreenShot](/Docs/Screenshots/api_calls.PNG)
 ![ScreenShot](/Docs/Screenshots/api_calls_2.PNG)
+
+Screenshot concerning certificate information.
+![ScreenShot](/Docs/Screenshots/certificate_info.PNG)
 
 Screenshots corresponding to the second functionality
 ![ScreenShot](/Docs/Screenshots/extract_from_file.PNG)
