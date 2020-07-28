@@ -2,6 +2,7 @@
 using System;
 using System.ComponentModel.Design;
 using System.IO;
+using System.Security.Cryptography.X509Certificates;
 
 namespace TestingConsoleApp
 {
@@ -20,6 +21,7 @@ namespace TestingConsoleApp
                     string pathToApk = Console.ReadLine();
                     Decompiler decompiler = new Decompiler();   //Create decompiler object to handle all functionality
                     decompiler.DecompileWithApktool(pathToApk); //Decompile the apk
+                    
                     //Give path to the produced manifest.xml to the corresponding decompiler field
                     decompiler.PathToManifest = Path.Combine(Environment.CurrentDirectory, Path.GetFileNameWithoutExtension(pathToApk), "AndroidManifest.xml");
                     decompiler.AnalyzeManifest(decompiler.PathToManifest);  //Parse the manifest to extract information
@@ -39,15 +41,19 @@ namespace TestingConsoleApp
                     decompiler.Manifest.Receivers.ForEach(Console.WriteLine);
                     Console.WriteLine("\nPROVIDERS");
                     decompiler.Manifest.Providers.ForEach(Console.WriteLine);
+
                     //Give path to Smali folders (on the level that contains all smali subfolders)
                     decompiler.PathToSmali = Path.Combine(Environment.CurrentDirectory, decompiler.ApkFileName);
                     decompiler.AnalyzeSmali(decompiler.PathToSmali);    //Parse .smali files inside all subdirectories and extract information
                     Console.WriteLine("\nAPI CALLS");
                     decompiler.Smali.ApiCalls.ForEach(Console.WriteLine);
 
+                    //Give path to apk's certificate
+                    decompiler.PathToCertificate = Path.Combine(Environment.CurrentDirectory, Path.GetFileNameWithoutExtension(pathToApk), "original", "META-INF", "CERT.RSA");
+
                     while (innerChoice != 0)
                     {
-                        Console.WriteLine("\n1. Write manifest information to file\n2. Write smali information to file\n0. Go back to previous menu\n");
+                        Console.WriteLine("\n1. Write manifest information to file\n2. Write smali information to file\n3. Write certificate info to file\n0. Go back to previous menu\n");
                         innerChoice = Convert.ToInt32(Console.ReadLine());
                         if (innerChoice == 1)
                         {
@@ -56,6 +62,11 @@ namespace TestingConsoleApp
                         else if (innerChoice == 2)
                         {
                             decompiler.WriteSmaliInfoToFile();
+                        }
+                        else if (innerChoice == 3)
+                        {
+                            string certificateContent = decompiler.WriteCertificateInfoToFile();
+                            Console.WriteLine(certificateContent);
                         }
                         else if (innerChoice == 0)
                         {
