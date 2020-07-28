@@ -43,7 +43,7 @@ namespace APKProfiler
             catch (System.IO.FileNotFoundException) { }
             catch (System.IO.DirectoryNotFoundException) { }
         }
-
+        //Function to extract information from AndroidManifest.xml
         private void GetAllFromFile(XElement xmlRoot)
         {
             XNamespace android = "http://schemas.android.com/apk/res/android";

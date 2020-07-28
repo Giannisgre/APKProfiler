@@ -19,7 +19,7 @@ namespace APKProfiler
             apiCalls = new List<string>();
         }
 
-        //Function that gets the name of each .smali file inside the produced "app" folder from the decompiling of the apk.
+        //Function that gets the name of each .smali file inside the produced folder from the decompiling of the apk.
         private void GetFileList(string pathToSmali)
         {
             smaliFiles = Directory.GetFiles(pathToSmali, "*.smali", SearchOption.AllDirectories).ToList();
