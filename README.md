@@ -36,9 +36,11 @@ Smali parsing performance (apk size, time elapsed in seconds, number of smali fi
 36,663 KB - 10.4447741 sec - 1,139 files
 
 Time - Size Chart
-![ScreenShot](/Docs/Screenshots/time-size.PNG)
+
+![ScreenShot](/Docs/Screenshots/time-size.png)
 
 Time - Number of Files Chart
-![ScreenShot](/Docs/Screenshots/time-files.PNG)
+
+![ScreenShot](/Docs/Screenshots/time-files.png)
 
 Requires: apktool, java 1.8+
