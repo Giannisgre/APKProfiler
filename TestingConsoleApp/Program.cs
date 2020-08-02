@@ -47,6 +47,10 @@ namespace TestingConsoleApp
                     decompiler.AnalyzeSmali(decompiler.PathToSmali);    //Parse .smali files inside all subdirectories and extract information
                     Console.WriteLine("\nAPI CALLS");
                     decompiler.Smali.ApiCalls.ForEach(Console.WriteLine);
+                    Console.WriteLine("\nURLS");
+                    decompiler.Smali.Urls.ForEach(Console.WriteLine);
+                    Console.WriteLine("\nIP ADDRESSES");
+                    decompiler.Smali.Ips.ForEach(Console.WriteLine);
 
                     //Give path to apk's certificate
                     decompiler.PathToCertificate = Path.Combine(Environment.CurrentDirectory, Path.GetFileNameWithoutExtension(pathToApk), "original", "META-INF", "CERT.RSA");
@@ -79,6 +83,7 @@ namespace TestingConsoleApp
                             innerChoice = Convert.ToInt32(Console.ReadLine());
                         }
                     }
+                    Console.WriteLine("Time elapsed for the parsing of smali files: " + decompiler.Smali.Stopwatch.Elapsed.TotalSeconds);
 
                 }
                 else if (choice == 2)

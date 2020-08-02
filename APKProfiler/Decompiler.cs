@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Diagnostics;
 using System.IO;
 using System.Security.Cryptography.X509Certificates;
@@ -115,18 +116,27 @@ namespace APKProfiler
             //Create file and write api calls in it
             File.WriteAllText(path, "API CALLS\n");
             File.AppendAllLines(path, smali.ApiCalls);
+            File.AppendAllText(path, "\nURLS\n");
+            File.AppendAllLines(path, smali.Urls);
+            File.AppendAllText(path, "\nIPS\n");
+            File.AppendAllLines(path, smali.Ips);
         }
         //Function to display X509Certificate information and write to file, returns certificate content as a string
         public string WriteCertificateInfoToFile()
         {
             string path = Path.Combine(Environment.CurrentDirectory, apkFileName + "-Certificate.txt");
+            string certificateContent = "Certificate not found";
             if (File.Exists(path))
             {
                 File.Delete(path);
             }
-            X509Certificate2 certificate = new X509Certificate2(File.ReadAllBytes(pathToCertificate));
-            string certificateContent = certificate.ToString(true);
-            File.WriteAllText(path, certificateContent);
+            if (File.Exists(pathToCertificate))
+            {
+                X509Certificate2 certificate = new X509Certificate2(File.ReadAllBytes(pathToCertificate));
+                certificateContent = certificate.ToString(true);
+                File.WriteAllText(path, certificateContent);
+            }
+            
             return certificateContent;
         }
     }
