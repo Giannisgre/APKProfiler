@@ -29,11 +29,17 @@ Properties available for extraction from the AndroidManifest.xml are listed belo
 8. Providers (List).
 
 Smali parsing performance (apk size, time elapsed in seconds, number of smali files):
+
 328 KB - 0.7016009 sec - 174 files
+
 2,639 KB - 0.1796747 sec - 13 files
+
 15,997KB - 27.2427558 sec - 3,516 files
+
 19,796 KB - 442.0275402 sec - 34,449 files
+
 36,663 KB - 10.4447741 sec - 1,139 files
+
 
 Time - Size Chart
 
