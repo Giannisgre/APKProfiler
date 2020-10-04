@@ -9,6 +9,7 @@ namespace APKProfiler
     public class Decompiler
     {
         //Decompiler Fields
+        private string pathToApktool;
         private string pathToManifest;
         private Manifest manifest;
         private string pathToSmali;
@@ -17,6 +18,11 @@ namespace APKProfiler
         private string pathToCertificate;
 
         //Getters
+        public string PathToApktool 
+        {
+            get { return pathToApktool; }
+            set { pathToApktool = value; }
+        }
         public string PathToManifest
         {
             get { return pathToManifest; }
@@ -37,6 +43,7 @@ namespace APKProfiler
         }
         public Decompiler()
         {
+            pathToApktool = "apktool";
             pathToManifest = null;
             manifest = null;
             pathToSmali = null;
@@ -56,7 +63,7 @@ namespace APKProfiler
                 {
                     FileName = "cmd.exe",   //in Command Prompt
                     WindowStyle = ProcessWindowStyle.Hidden,    //make cmd window hidden
-                    Arguments = "/C apktool decode " + apkFilePath + " -o " + apkFileName  //decode using apktool and put result in folder
+                    Arguments = "/C " + pathToApktool + " decode " + apkFilePath + " -o " + apkFileName  //decode using apktool and put result in folder
                 };
                 process.StartInfo = processStartInfo;
                 process.Start();

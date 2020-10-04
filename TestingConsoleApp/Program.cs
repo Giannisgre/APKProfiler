@@ -11,15 +11,18 @@ namespace TestingConsoleApp
         static void Main(string[] args)
         {
             int choice = -1; int innerChoice = -1;
+            Decompiler decompiler = new Decompiler();   //Create decompiler object to handle all functionality
+
             while (choice != 0)
             {
-                Console.WriteLine("\n1. Decompile APK using apk tool\n2. Give AndroidManifest.xml to extract information\n0. Exit\n");
+                Console.WriteLine("\n1. Decompile APK using apk tool\n2. Give AndroidManifest.xml to extract information\n3. Change path to apktool\n0. Exit\n");
                 choice = Convert.ToInt32(Console.ReadLine());
                 if (choice == 1)
                 {
+                    Console.WriteLine("apktool path: " + decompiler.PathToApktool);
                     Console.WriteLine("Give path to Apk (with apk name included):");
                     string pathToApk = Console.ReadLine();
-                    Decompiler decompiler = new Decompiler();   //Create decompiler object to handle all functionality
+                    //Decompiler decompiler = new Decompiler();   //Create decompiler object to handle all functionality
                     decompiler.DecompileWithApktool(pathToApk); //Decompile the apk
                     
                     //Give path to the produced manifest.xml to the corresponding decompiler field
@@ -109,6 +112,12 @@ namespace TestingConsoleApp
                     manifest.Receivers.ForEach(Console.WriteLine);
                     Console.WriteLine("\nPROVIDERS");
                     manifest.Providers.ForEach(Console.WriteLine);
+                }
+                else if (choice == 3)
+                {
+                    Console.WriteLine("Specify path to apktool:");
+                    string pathToApktool = Console.ReadLine();
+                    decompiler.PathToApktool = pathToApktool;
                 }
                 else if (choice == 0)
                 {
