@@ -1,6 +1,6 @@
 # APKProfiler
 Functionality of the library:
-1. Decompile an apk using apktool by giving the absolute path to the apk, including the apk name. After the process completes, properties from the produced AndroidManifest are extracted. Added extraction of API Calls, URLs and IPs from smali files. Added write to file functions. Added X509Certificate information extraction (if found).
+1. Decompile an apk using apktool by giving the absolute path to the apk, including the apk name. After the process completes, properties from the produced AndroidManifest are extracted. Added extraction of API Calls, URLs and IPs from smali files in txt or xlsx format. Added write to file functions. Added X509Certificate information extraction (if found).
 2. Extract properties from an AndroidManifest.xml file directly by providing the absolute path of the file, without the file name.
 
 Screenshots corresponding to the first functionality.

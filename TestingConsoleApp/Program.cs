@@ -60,7 +60,7 @@ namespace TestingConsoleApp
 
                     while (innerChoice != 0)
                     {
-                        Console.WriteLine("\n1. Write manifest information to file\n2. Write smali information to file\n3. Write certificate info to file\n0. Go back to previous menu\n");
+                        Console.WriteLine("\n1. Write manifest information to file\n2. Write smali information to file\n3. Write smali information to excel file\n4. Write certificate info to file\n0. Go back to previous menu\n");
                         innerChoice = Convert.ToInt32(Console.ReadLine());
                         if (innerChoice == 1)
                         {
@@ -71,6 +71,10 @@ namespace TestingConsoleApp
                             decompiler.WriteSmaliInfoToFile();
                         }
                         else if (innerChoice == 3)
+                        {
+                            decompiler.WriteSmaliToExcel();
+                        }
+                        else if (innerChoice == 4)
                         {
                             string certificateContent = decompiler.WriteCertificateInfoToFile();
                             Console.WriteLine(certificateContent);
@@ -92,10 +96,9 @@ namespace TestingConsoleApp
                 else if (choice == 2)
                 {
                     Manifest manifest = new Manifest();
-                    Console.WriteLine("Give path to Manifest file (without the name of the actual file):");
+                    Console.WriteLine("Give path to Manifest file:");
                     string pathToManifest = Console.ReadLine();
-                    string path = Path.Combine(pathToManifest, "AndroidManifest.xml");
-                    manifest.ParseManifest(path);
+                    manifest.ParseManifest(pathToManifest);
                     Console.WriteLine("Package Name");
                     Console.WriteLine(manifest.PackageName);
                     Console.WriteLine("\nCompileSdkVersion");

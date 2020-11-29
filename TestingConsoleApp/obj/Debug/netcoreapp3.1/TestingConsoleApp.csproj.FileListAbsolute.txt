@@ -14,3 +14,6 @@ C:\Users\Grev\Documents\Visual Studio 2019\Projects\TestingConsoleApp\obj\Debug\
 C:\Users\Grev\Documents\Visual Studio 2019\Projects\TestingConsoleApp\obj\Debug\netcoreapp3.1\TestingConsoleApp.dll
 C:\Users\Grev\Documents\Visual Studio 2019\Projects\TestingConsoleApp\obj\Debug\netcoreapp3.1\TestingConsoleApp.pdb
 C:\Users\Grev\Documents\Visual Studio 2019\Projects\TestingConsoleApp\obj\Debug\netcoreapp3.1\TestingConsoleApp.genruntimeconfig.cache
+C:\Users\Grev\Documents\Visual Studio 2019\Projects\TestingConsoleApp\bin\Debug\netcoreapp3.1\Interop.Microsoft.Office.Interop.Excel.dll
+C:\Users\Grev\Documents\Visual Studio 2019\Projects\TestingConsoleApp\obj\Debug\netcoreapp3.1\Interop.Microsoft.Office.Interop.Excel.dll
+C:\Users\Grev\Documents\Visual Studio 2019\Projects\TestingConsoleApp\obj\Debug\netcoreapp3.1\TestingConsoleApp.csproj.ResolveComReference.cache
