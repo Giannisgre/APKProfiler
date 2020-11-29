@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_gravity="center_vertical" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:gravity="center" android:id="@id/center" android:layout_width="fill_parent" android:layout_height="0.0dip" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintRight_toRightOf="parent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_chainStyle="spread" app:layout_constraintVertical_weight="5.0">
+        <View android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="0.15" />
+        <ImageView android:layout_width="0.0dip" android:layout_height="wrap_content" android:src="@drawable/ic_opentrace_blue_transparent" android:layout_weight="0.7" app:layout_constraintTop_toTopOf="@id/center" />
+        <View android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="0.15" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

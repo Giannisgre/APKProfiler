@@ -1,9 +1,9 @@
-﻿using System;
+﻿using ClosedXML.Excel;
+using System;
 using System.Data;
 using System.Diagnostics;
 using System.IO;
 using System.Security.Cryptography.X509Certificates;
-using Excel = Microsoft.Office.Interop.Excel;
 
 namespace APKProfiler
 {
@@ -132,39 +132,25 @@ namespace APKProfiler
         //Function to write all information extracted from .smali files to an excel file (one sheet tab per category)
         public void WriteSmaliToExcel()
         {
-			Excel.Application excel = new Excel.Application();   //Create an excel application
-            excel.Visible = false;   //Make it invisible to the user
-            Excel.Workbook workbook = excel.Workbooks.Add();    //Create Workbook
-            Excel.Worksheet apiCallsSheet = (Excel.Worksheet) workbook.ActiveSheet; //Create Worksheet and set as active
-            apiCallsSheet.Name = "API Calls";   //Set Worksheet name
-            excel.Range["A1"].Select(); //Select the first cell
-            //For every API Call set the cell value and move to the next line
-            foreach(var line in smali.ApiCalls)
-            {
-                excel.ActiveCell.Value = line;
-                excel.ActiveCell.Offset[1,0].Select();
-            }
-            
-            Excel.Worksheet urlsSheet = (Excel.Worksheet) workbook.Worksheets.Add();
-            urlsSheet.Name = "URLs";
-            excel.Range["A1"].Select();
-            foreach(var line in smali.Urls)
-            {
-                excel.ActiveCell.Value = line;
-                excel.ActiveCell.Offset[1,0].Select();
-            }
-            
-            Excel.Worksheet ipsSheet = (Excel.Worksheet) workbook.Worksheets.Add();
-            ipsSheet.Name = "IPs";
-            excel.Range["A1"].Select();
-            foreach(var line in smali.Ips)
-            {
-                excel.ActiveCell.Value = line;
-                excel.ActiveCell.Offset[1,0].Select();
-            }
-            //Save excel file and close the workbook.
-            workbook.SaveAs2(Path.Combine(Environment.CurrentDirectory,apkFileName.Replace(".","")),Excel.XlFileFormat.xlWorkbookDefault,Type.Missing, Type.Missing, false,false,Excel.XlSaveAsAccessMode.xlNoChange, Type.Missing,Type.Missing,Type.Missing,Type.Missing,Type.Missing,Type.Missing);
-            workbook.Close();
+            var workbook = new XLWorkbook();
+
+            IXLWorksheet IPworksheet = workbook.Worksheets.Add("IPs");
+            IPworksheet.Cell(1, 1).Value = "IP";
+            for (int index = 1; index <= smali.Ips.Count; index++)
+                IPworksheet.Cell(index + 1, 1).Value = smali.Ips[index - 1];
+
+            IXLWorksheet URLworksheet = workbook.Worksheets.Add("Urls");
+            URLworksheet.Cell(1, 1).Value = "Urls";
+            for (int index = 1; index <= smali.Urls.Count; index++)
+                URLworksheet.Cell(index + 1, 1).Value = smali.Urls[index - 1];
+
+            IXLWorksheet APICallworksheet = workbook.Worksheets.Add("Api Calls");
+            APICallworksheet.Cell(1, 1).Value = "Api Calls";
+            for (int index = 1; index <= smali.ApiCalls.Count; index++)
+                APICallworksheet.Cell(index + 1, 1).Value = smali.ApiCalls[index - 1];
+
+            workbook.SaveAs(apkFileName + ".xlsx");
+
             Console.Out.WriteLine("Export Successful!");
         }
         //Function to display X509Certificate information and write to file, returns certificate content as a string

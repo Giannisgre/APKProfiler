@@ -48,12 +48,12 @@ namespace TestingConsoleApp
                     //Give path to Smali folders (on the level that contains all smali subfolders)
                     decompiler.PathToSmali = Path.Combine(Environment.CurrentDirectory, decompiler.ApkFileName);
                     decompiler.AnalyzeSmali(decompiler.PathToSmali);    //Parse .smali files inside all subdirectories and extract information
-                    Console.WriteLine("\nAPI CALLS");
-                    decompiler.Smali.ApiCalls.ForEach(Console.WriteLine);
-                    Console.WriteLine("\nURLS");
-                    decompiler.Smali.Urls.ForEach(Console.WriteLine);
-                    Console.WriteLine("\nIP ADDRESSES");
-                    decompiler.Smali.Ips.ForEach(Console.WriteLine);
+                    Console.WriteLine("\nLogging API CALLS");
+                    //decompiler.Smali.ApiCalls.ForEach(Console.WriteLine);
+                    Console.WriteLine("\nLogging URLS");
+                    //decompiler.Smali.Urls.ForEach(Console.WriteLine);
+                    Console.WriteLine("\nLogging IP ADDRESSES");
+                    //decompiler.Smali.Ips.ForEach(Console.WriteLine);
 
                     //Give path to apk's certificate
                     decompiler.PathToCertificate = Path.Combine(Environment.CurrentDirectory, Path.GetFileNameWithoutExtension(pathToApk), "original", "META-INF", "CERT.RSA");

@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Grev\\Documents\\Visual Studio 2019\\Projects\\TestingConsoleApp\\TestingConsoleApp.csproj": {}
+    "C:\\Users\\billkoul\\Downloads\\APKProfiler\\TestingConsoleApp\\TestingConsoleApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Grev\\Documents\\Visual Studio 2019\\Projects\\APKProfiler\\APKProfiler.csproj": {
+    "C:\\Users\\billkoul\\Downloads\\APKProfiler\\APKProfiler\\APKProfiler.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Grev\\Documents\\Visual Studio 2019\\Projects\\APKProfiler\\APKProfiler.csproj",
+        "projectUniqueName": "C:\\Users\\billkoul\\Downloads\\APKProfiler\\APKProfiler\\APKProfiler.csproj",
         "projectName": "APKProfiler",
-        "projectPath": "C:\\Users\\Grev\\Documents\\Visual Studio 2019\\Projects\\APKProfiler\\APKProfiler.csproj",
-        "packagesPath": "C:\\Users\\Grev\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Grev\\Documents\\Visual Studio 2019\\Projects\\APKProfiler\\obj\\",
+        "projectPath": "C:\\Users\\billkoul\\Downloads\\APKProfiler\\APKProfiler\\APKProfiler.csproj",
+        "packagesPath": "C:\\Users\\billkoul\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\billkoul\\Downloads\\APKProfiler\\APKProfiler\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Grev\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\billkoul\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -37,6 +40,12 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "ClosedXML": {
+              "target": "Package",
+              "version": "[0.95.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -52,21 +61,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Grev\\Documents\\Visual Studio 2019\\Projects\\TestingConsoleApp\\TestingConsoleApp.csproj": {
+    "C:\\Users\\billkoul\\Downloads\\APKProfiler\\TestingConsoleApp\\TestingConsoleApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Grev\\Documents\\Visual Studio 2019\\Projects\\TestingConsoleApp\\TestingConsoleApp.csproj",
+        "projectUniqueName": "C:\\Users\\billkoul\\Downloads\\APKProfiler\\TestingConsoleApp\\TestingConsoleApp.csproj",
         "projectName": "TestingConsoleApp",
-        "projectPath": "C:\\Users\\Grev\\Documents\\Visual Studio 2019\\Projects\\TestingConsoleApp\\TestingConsoleApp.csproj",
-        "packagesPath": "C:\\Users\\Grev\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Grev\\Documents\\Visual Studio 2019\\Projects\\TestingConsoleApp\\obj\\",
+        "projectPath": "C:\\Users\\billkoul\\Downloads\\APKProfiler\\TestingConsoleApp\\TestingConsoleApp.csproj",
+        "packagesPath": "C:\\Users\\billkoul\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\billkoul\\Downloads\\APKProfiler\\TestingConsoleApp\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Grev\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\billkoul\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -79,8 +91,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Grev\\Documents\\Visual Studio 2019\\Projects\\APKProfiler\\APKProfiler.csproj": {
-                "projectPath": "C:\\Users\\Grev\\Documents\\Visual Studio 2019\\Projects\\APKProfiler\\APKProfiler.csproj"
+              "C:\\Users\\billkoul\\Downloads\\APKProfiler\\APKProfiler\\APKProfiler.csproj": {
+                "projectPath": "C:\\Users\\billkoul\\Downloads\\APKProfiler\\APKProfiler\\APKProfiler.csproj"
               }
             }
           }
@@ -108,7 +120,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
