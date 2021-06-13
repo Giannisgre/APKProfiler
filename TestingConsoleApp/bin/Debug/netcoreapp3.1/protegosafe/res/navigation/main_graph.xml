@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<navigation android:id="@id/main_graph" app:startDestination="@id/home"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <fragment android:name="pl.gov.mc.protegosafe.ui.home.HomeFragment" android:id="@id/home" />
-    <action android:id="@id/action_to_infoDialog" app:destination="@id/infoDialogFragment" />
-    <dialog android:name="pl.gov.mc.protegosafe.ui.dialog.InfoDialogFragment" android:id="@id/infoDialogFragment">
-        <argument android:name="messageTextRes" app:argType="reference" />
-    </dialog>
-</navigation>
