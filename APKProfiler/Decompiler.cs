@@ -98,6 +98,7 @@ namespace APKProfiler
                 File.Delete(path);
             }
             //Create file and write manifest information in it
+/*
             File.WriteAllText(path, "PACKAGE NAME\n" + manifest.PackageName + "\n\nCOMPILE SDK VERSION\n" + manifest.CompileSdkVersion + "\n\nPERMISSIONS\n");
             File.AppendAllLines(path, manifest.Permissions);
             File.AppendAllText(path, "\nINTENTS\n");
@@ -110,7 +111,95 @@ namespace APKProfiler
             File.AppendAllLines(path, manifest.Receivers);
             File.AppendAllText(path, "\nPROVIDERS\n");
             File.AppendAllLines(path, manifest.Providers);
-            
+*/
+            if(File.Exists(apkFileName + ".xlsx")){
+                var workbook = new XLWorkbook(apkFileName + ".xlsx");
+
+                IXLWorksheet BasicInfoWorksheet = workbook.Worksheets.Add("Basic Info");
+                BasicInfoWorksheet.Cell(1, 1).Value = "Package Name:";
+                BasicInfoWorksheet.Cell(2, 1).Value = manifest.PackageName;
+                BasicInfoWorksheet.Cell(1, 2).Value = "Compile SDK Version:";
+                BasicInfoWorksheet.Cell(2, 2).Value = manifest.CompileSdkVersion;
+
+                IXLWorksheet PermissionWorksheet = workbook.Worksheets.Add("Permissions");
+                PermissionWorksheet.Cell(1, 1).Value = "Permission";
+                for (int index = 1; index <= manifest.Permissions.Count; index++)
+                    PermissionWorksheet.Cell(index + 1, 1).Value = manifest.Permissions[index - 1];
+
+                IXLWorksheet IntentsWorksheet = workbook.Worksheets.Add("Intents");
+                IntentsWorksheet.Cell(1, 1).Value = "Intent";
+                for (int index = 1; index <= manifest.Intents.Count; index++)
+                    IntentsWorksheet.Cell(index + 1, 1).Value = manifest.Intents[index - 1];
+
+                IXLWorksheet ServicesWorksheet = workbook.Worksheets.Add("Services");
+                ServicesWorksheet.Cell(1, 1).Value = "Service";
+                for (int index = 1; index <= manifest.Services.Count; index++)
+                    ServicesWorksheet.Cell(index + 1, 1).Value = manifest.Services[index - 1];
+
+                IXLWorksheet ActivitiesWorksheet = workbook.Worksheets.Add("Activities");
+                ActivitiesWorksheet.Cell(1, 1).Value = "Activity";
+                for (int index = 1; index <= manifest.Activities.Count; index++)
+                    ActivitiesWorksheet.Cell(index + 1, 1).Value = manifest.Activities[index - 1];
+
+                IXLWorksheet ReceiversWorksheet = workbook.Worksheets.Add("Receivers");
+                ReceiversWorksheet.Cell(1, 1).Value = "Receiver";
+                for (int index = 1; index <= manifest.Receivers.Count; index++)
+                    ReceiversWorksheet.Cell(index + 1, 1).Value = manifest.Receivers[index - 1];
+
+                IXLWorksheet ProvidersWorksheet = workbook.Worksheets.Add("Providers");
+                ProvidersWorksheet.Cell(1, 1).Value = "Provider";
+                for (int index = 1; index <= manifest.Providers.Count; index++)
+                    ProvidersWorksheet.Cell(index + 1, 1).Value = manifest.Providers[index - 1];
+
+
+                workbook.Save();
+            }
+            else{
+                var workbook = new XLWorkbook();
+
+                IXLWorksheet BasicInfoWorksheet = workbook.Worksheets.Add("Basic Info");
+                BasicInfoWorksheet.Cell(1, 1).Value = "Package Name:";
+                BasicInfoWorksheet.Cell(2, 1).Value = manifest.PackageName;
+                BasicInfoWorksheet.Cell(1, 2).Value = "Compile SDK Version:";
+                BasicInfoWorksheet.Cell(2, 2).Value = manifest.CompileSdkVersion;
+
+                IXLWorksheet PermissionWorksheet = workbook.Worksheets.Add("Permissions");
+                PermissionWorksheet.Cell(1, 1).Value = "Permission";
+                for (int index = 1; index <= manifest.Permissions.Count; index++)
+                    PermissionWorksheet.Cell(index + 1, 1).Value = manifest.Permissions[index - 1];
+
+                IXLWorksheet IntentsWorksheet = workbook.Worksheets.Add("Intents");
+                IntentsWorksheet.Cell(1, 1).Value = "Intent";
+                for (int index = 1; index <= manifest.Intents.Count; index++)
+                    IntentsWorksheet.Cell(index + 1, 1).Value = manifest.Intents[index - 1];
+
+                IXLWorksheet ServicesWorksheet = workbook.Worksheets.Add("Services");
+                ServicesWorksheet.Cell(1, 1).Value = "Service";
+                for (int index = 1; index <= manifest.Services.Count; index++)
+                    ServicesWorksheet.Cell(index + 1, 1).Value = manifest.Services[index - 1];
+
+                IXLWorksheet ActivitiesWorksheet = workbook.Worksheets.Add("Activities");
+                ActivitiesWorksheet.Cell(1, 1).Value = "Activity";
+                for (int index = 1; index <= manifest.Activities.Count; index++)
+                    ActivitiesWorksheet.Cell(index + 1, 1).Value = manifest.Activities[index - 1];
+
+                IXLWorksheet ReceiversWorksheet = workbook.Worksheets.Add("Receivers");
+                ReceiversWorksheet.Cell(1, 1).Value = "Receiver";
+                for (int index = 1; index <= manifest.Receivers.Count; index++)
+                    ReceiversWorksheet.Cell(index + 1, 1).Value = manifest.Receivers[index - 1];
+
+                IXLWorksheet ProvidersWorksheet = workbook.Worksheets.Add("Providers");
+                ProvidersWorksheet.Cell(1, 1).Value = "Provider";
+                for (int index = 1; index <= manifest.Providers.Count; index++)
+                    ProvidersWorksheet.Cell(index + 1, 1).Value = manifest.Providers[index - 1];
+
+
+                workbook.SaveAs(apkFileName + ".xlsx");
+
+            }
+
+            Console.Out.WriteLine("Export Successful!");
+
         }
         //Function to write all information extracted from .smali files to a file
         public void WriteSmaliInfoToFile()
@@ -132,24 +221,46 @@ namespace APKProfiler
         //Function to write all information extracted from .smali files to an excel file (one sheet tab per category)
         public void WriteSmaliToExcel()
         {
-            var workbook = new XLWorkbook();
+            if(File.Exists(apkFileName + ".xlsx")){
+                var workbook = new XLWorkbook(apkFileName + ".xlsx");
 
-            IXLWorksheet IPworksheet = workbook.Worksheets.Add("IPs");
-            IPworksheet.Cell(1, 1).Value = "IP";
-            for (int index = 1; index <= smali.Ips.Count; index++)
-                IPworksheet.Cell(index + 1, 1).Value = smali.Ips[index - 1];
+                IXLWorksheet IpWorksheet = workbook.Worksheets.Add("IPs");
+                IpWorksheet.Cell(1, 1).Value = "IP";
+                for (int index = 1; index <= smali.Ips.Count; index++)
+                    IpWorksheet.Cell(index + 1, 1).Value = smali.Ips[index - 1];
 
-            IXLWorksheet URLworksheet = workbook.Worksheets.Add("Urls");
-            URLworksheet.Cell(1, 1).Value = "Urls";
-            for (int index = 1; index <= smali.Urls.Count; index++)
-                URLworksheet.Cell(index + 1, 1).Value = smali.Urls[index - 1];
+                IXLWorksheet UrlWorksheet = workbook.Worksheets.Add("Urls");
+                UrlWorksheet.Cell(1, 1).Value = "Urls";
+                for (int index = 1; index <= smali.Urls.Count; index++)
+                    UrlWorksheet.Cell(index + 1, 1).Value = smali.Urls[index - 1];
 
-            IXLWorksheet APICallworksheet = workbook.Worksheets.Add("Api Calls");
-            APICallworksheet.Cell(1, 1).Value = "Api Calls";
-            for (int index = 1; index <= smali.ApiCalls.Count; index++)
-                APICallworksheet.Cell(index + 1, 1).Value = smali.ApiCalls[index - 1];
+                IXLWorksheet APICallWorksheet = workbook.Worksheets.Add("Api Calls");
+                APICallWorksheet.Cell(1, 1).Value = "Api Calls";
+                for (int index = 1; index <= smali.ApiCalls.Count; index++)
+                    APICallWorksheet.Cell(index + 1, 1).Value = smali.ApiCalls[index - 1];
 
-            workbook.SaveAs(apkFileName + ".xlsx");
+                workbook.Save();
+            }
+            else{
+                var workbook = new XLWorkbook();
+
+                IXLWorksheet IpWorksheet = workbook.Worksheets.Add("IPs");
+                IpWorksheet.Cell(1, 1).Value = "IP";
+                for (int index = 1; index <= smali.Ips.Count; index++)
+                    IpWorksheet.Cell(index + 1, 1).Value = smali.Ips[index - 1];
+
+                IXLWorksheet UrlWorksheet = workbook.Worksheets.Add("Urls");
+                UrlWorksheet.Cell(1, 1).Value = "Urls";
+                for (int index = 1; index <= smali.Urls.Count; index++)
+                    UrlWorksheet.Cell(index + 1, 1).Value = smali.Urls[index - 1];
+
+                IXLWorksheet APICallWorksheet = workbook.Worksheets.Add("Api Calls");
+                APICallWorksheet.Cell(1, 1).Value = "Api Calls";
+                for (int index = 1; index <= smali.ApiCalls.Count; index++)
+                    APICallWorksheet.Cell(index + 1, 1).Value = smali.ApiCalls[index - 1];
+
+                workbook.SaveAs(apkFileName + ".xlsx");
+            }
 
             Console.Out.WriteLine("Export Successful!");
         }

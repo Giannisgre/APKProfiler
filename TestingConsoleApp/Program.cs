@@ -47,20 +47,16 @@ namespace TestingConsoleApp
 
                     //Give path to Smali folders (on the level that contains all smali subfolders)
                     decompiler.PathToSmali = Path.Combine(Environment.CurrentDirectory, decompiler.ApkFileName);
+                    Console.WriteLine("\nCollecting information from smali files...");
                     decompiler.AnalyzeSmali(decompiler.PathToSmali);    //Parse .smali files inside all subdirectories and extract information
-                    Console.WriteLine("\nLogging API CALLS");
-                    //decompiler.Smali.ApiCalls.ForEach(Console.WriteLine);
-                    Console.WriteLine("\nLogging URLS");
-                    //decompiler.Smali.Urls.ForEach(Console.WriteLine);
-                    Console.WriteLine("\nLogging IP ADDRESSES");
-                    //decompiler.Smali.Ips.ForEach(Console.WriteLine);
+                    
 
                     //Give path to apk's certificate
                     decompiler.PathToCertificate = Path.Combine(Environment.CurrentDirectory, Path.GetFileNameWithoutExtension(pathToApk), "original", "META-INF", "CERT.RSA");
 
                     while (innerChoice != 0)
                     {
-                        Console.WriteLine("\n1. Write manifest information to file\n2. Write smali information to file\n3. Write smali information to excel file\n4. Write certificate info to file\n0. Go back to previous menu\n");
+                        Console.WriteLine("\n1. Write manifest information to file\n2. Write smali information to excel file\n3. Write smali information to file\n4. Write certificate info to file\n0. Go back to previous menu\n");
                         innerChoice = Convert.ToInt32(Console.ReadLine());
                         if (innerChoice == 1)
                         {
@@ -68,11 +64,11 @@ namespace TestingConsoleApp
                         }
                         else if (innerChoice == 2)
                         {
-                            decompiler.WriteSmaliInfoToFile();
+                            decompiler.WriteSmaliToExcel();
                         }
                         else if (innerChoice == 3)
                         {
-                            decompiler.WriteSmaliToExcel();
+                            decompiler.WriteSmaliInfoToFile();
                         }
                         else if (innerChoice == 4)
                         {

@@ -4726,23 +4726,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\billkoul\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Grev\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\billkoul\\Downloads\\APKProfiler\\TestingConsoleApp\\TestingConsoleApp.csproj",
+      "projectUniqueName": "C:\\Users\\Grev\\Documents\\Visual Studio 2019\\Projects\\TestingConsoleApp\\TestingConsoleApp.csproj",
       "projectName": "TestingConsoleApp",
-      "projectPath": "C:\\Users\\billkoul\\Downloads\\APKProfiler\\TestingConsoleApp\\TestingConsoleApp.csproj",
-      "packagesPath": "C:\\Users\\billkoul\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\billkoul\\Downloads\\APKProfiler\\TestingConsoleApp\\obj\\",
+      "projectPath": "C:\\Users\\Grev\\Documents\\Visual Studio 2019\\Projects\\TestingConsoleApp\\TestingConsoleApp.csproj",
+      "packagesPath": "C:\\Users\\Grev\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Grev\\Documents\\Visual Studio 2019\\Projects\\TestingConsoleApp\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\billkoul\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Grev\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4754,9 +4750,10 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\billkoul\\Downloads\\APKProfiler\\APKProfiler\\APKProfiler.csproj": {
-              "projectPath": "C:\\Users\\billkoul\\Downloads\\APKProfiler\\APKProfiler\\APKProfiler.csproj"
+            "C:\\Users\\Grev\\Documents\\Visual Studio 2019\\Projects\\APKProfiler\\APKProfiler.csproj": {
+              "projectPath": "C:\\Users\\Grev\\Documents\\Visual Studio 2019\\Projects\\APKProfiler\\APKProfiler.csproj"
             }
           }
         }
@@ -4769,6 +4766,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "imports": [
           "net461",
           "net462",
@@ -4784,7 +4782,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }
