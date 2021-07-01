@@ -1,8 +1,6 @@
 ﻿using APKProfiler;
 using System;
-using System.ComponentModel.Design;
 using System.IO;
-using System.Security.Cryptography.X509Certificates;
 
 namespace TestingConsoleApp
 {
@@ -22,7 +20,6 @@ namespace TestingConsoleApp
                     Console.WriteLine("apktool path: " + decompiler.PathToApktool);
                     Console.WriteLine("Give path to Apk (with apk name included):");
                     string pathToApk = Console.ReadLine();
-                    //Decompiler decompiler = new Decompiler();   //Create decompiler object to handle all functionality
                     decompiler.DecompileWithApktool(pathToApk); //Decompile the apk
                     
                     //Give path to the produced manifest.xml to the corresponding decompiler field
@@ -56,7 +53,7 @@ namespace TestingConsoleApp
 
                     while (innerChoice != 0)
                     {
-                        Console.WriteLine("\n1. Write manifest information to file\n2. Write smali information to excel file\n3. Write smali information to file\n4. Write certificate info to file\n0. Go back to previous menu\n");
+                        Console.WriteLine("\n1. Write manifest information to file\n2. Write smali information to file\n3. Write certificate info to file\n0. Go back to previous menu\n");
                         innerChoice = Convert.ToInt32(Console.ReadLine());
                         if (innerChoice == 1)
                         {
@@ -64,13 +61,9 @@ namespace TestingConsoleApp
                         }
                         else if (innerChoice == 2)
                         {
-                            decompiler.WriteSmaliToExcel();
-                        }
-                        else if (innerChoice == 3)
-                        {
                             decompiler.WriteSmaliInfoToFile();
                         }
-                        else if (innerChoice == 4)
+                        else if (innerChoice == 3)
                         {
                             string certificateContent = decompiler.WriteCertificateInfoToFile();
                             Console.WriteLine(certificateContent);

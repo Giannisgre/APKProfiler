@@ -1,14 +1,15 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
+
 namespace APKProfiler
 {
     public class Manifest
     {
         //Manifest Fields
         private XElement xElement;
-        private List<string> permissions, intents, services, activities, receivers, providers;
-        private string packageName, compileSdkVersion;
+		private List<string> permissions, intents, services, activities, receivers, providers;
+		private string packageName, compileSdkVersion;
 
         //Getters
         public XElement Element => xElement;

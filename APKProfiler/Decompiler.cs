@@ -1,6 +1,5 @@
 ﻿using ClosedXML.Excel;
 using System;
-using System.Data;
 using System.Diagnostics;
 using System.IO;
 using System.Security.Cryptography.X509Certificates;
@@ -91,27 +90,7 @@ namespace APKProfiler
         //Function to write all information extracted from AndroidManifest.xml to a file
         public void WriteManifestInfoToFile()
         {
-            string path = Path.Combine(Environment.CurrentDirectory, "manifest-" + apkFileName + ".txt");
-            //If file already exists,delete it
-            if (File.Exists(path))
-            {
-                File.Delete(path);
-            }
-            //Create file and write manifest information in it
-/*
-            File.WriteAllText(path, "PACKAGE NAME\n" + manifest.PackageName + "\n\nCOMPILE SDK VERSION\n" + manifest.CompileSdkVersion + "\n\nPERMISSIONS\n");
-            File.AppendAllLines(path, manifest.Permissions);
-            File.AppendAllText(path, "\nINTENTS\n");
-            File.AppendAllLines(path, manifest.Intents);
-            File.AppendAllText(path, "\nSERVICES\n");
-            File.AppendAllLines(path, manifest.Services);
-            File.AppendAllText(path, "\nACTIVITIES\n");
-            File.AppendAllLines(path, manifest.Activities);
-            File.AppendAllText(path, "\nRECEIVERS\n");
-            File.AppendAllLines(path, manifest.Receivers);
-            File.AppendAllText(path, "\nPROVIDERS\n");
-            File.AppendAllLines(path, manifest.Providers);
-*/
+            //Create xlsx file if it doesn't exist and write manifest information in it
             if(File.Exists(apkFileName + ".xlsx")){
                 var workbook = new XLWorkbook(apkFileName + ".xlsx");
 
@@ -154,6 +133,7 @@ namespace APKProfiler
 
                 workbook.Save();
             }
+            //If xlsx file already exists append Manifest information
             else{
                 var workbook = new XLWorkbook();
 
@@ -201,26 +181,11 @@ namespace APKProfiler
             Console.Out.WriteLine("Export Successful!");
 
         }
-        //Function to write all information extracted from .smali files to a file
+       
+        //Function to write all information extracted from .smali files to an excel file (one sheet tab per category)
         public void WriteSmaliInfoToFile()
         {
-            string path = Path.Combine(Environment.CurrentDirectory,"smali-" + apkFileName + ".txt");
-            //If file already exists,delete it
-            if (File.Exists(path))
-            {
-                File.Delete(path);
-            }            
-            //Create file and write api calls in it
-            File.WriteAllText(path, "API CALLS\n");
-            File.AppendAllLines(path, smali.ApiCalls);
-            File.AppendAllText(path, "\nURLS\n");
-            File.AppendAllLines(path, smali.Urls);
-            File.AppendAllText(path, "\nIPS\n");
-            File.AppendAllLines(path, smali.Ips);
-        }
-        //Function to write all information extracted from .smali files to an excel file (one sheet tab per category)
-        public void WriteSmaliToExcel()
-        {
+            //If xlsx file doesn't already exist, create it and write smali info 
             if(File.Exists(apkFileName + ".xlsx")){
                 var workbook = new XLWorkbook(apkFileName + ".xlsx");
 
@@ -240,7 +205,8 @@ namespace APKProfiler
                     APICallWorksheet.Cell(index + 1, 1).Value = smali.ApiCalls[index - 1];
 
                 workbook.Save();
-            }
+            }  
+            //Else if file already exists (eg. created by writing manifest info to file) then append to that file
             else{
                 var workbook = new XLWorkbook();
 
