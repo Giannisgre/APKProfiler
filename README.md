@@ -40,22 +40,22 @@ APKProfiler is a .NET Core library, written in C#, that comes with a console app
 
 Permissions tab
 
-![Screenshot](/Docs/Screenshots/permissions_xlsx.png)
+![Screenshot](/Docs/Screenshots/permissions_xlsx.PNG)
 
 
 Intents tab
 
-![Screenshot](/Docs/Screenshots/intents_xlsx.png)
+![Screenshot](/Docs/Screenshots/intents_xlsx.PNG)
 
 
 API Calls tab
 
-![Screenshot](/Docs/Screenshots/api_calls_xlsx.png)
+![Screenshot](/Docs/Screenshots/api_calls_xlsx.PNG)
 
 
 Certificate file
 
-![Screenshot](/Docs/Screenshots/certificate.png)
+![Screenshot](/Docs/Screenshots/certificate.PNG)
 
 
 ## Performance
