@@ -1,32 +1,64 @@
-# APKProfiler
-Functionality of the library:
-1. Decompile an apk using apktool by giving the absolute path to the apk, including the apk name. After the process completes, properties from the produced AndroidManifest are extracted. Added extraction of API Calls, URLs and IPs from smali files in txt or xlsx format. Added write to file functions. Added X509Certificate information extraction (if found).
-2. Extract properties from an AndroidManifest.xml file directly by providing the absolute path of the file, without the file name.
+# APKProfiler: An Android application decompilation and feature extraction library
 
-Screenshots corresponding to the first functionality.
-![ScreenShot](/Docs/Screenshots/decompile_apktool.PNG)
-![ScreenShot](/Docs/Screenshots/decompile_apktool_2.PNG)
-![ScreenShot](/Docs/Screenshots/decompile_apktool_3.PNG)
 
-Screenshots concerning API Calls.
-![ScreenShot](/Docs/Screenshots/api_calls.PNG)
-![ScreenShot](/Docs/Screenshots/api_calls_2.PNG)
+##What is it?
 
-Screenshot concerning certificate information.
-![ScreenShot](/Docs/Screenshots/certificate_info.PNG)
+APKProfiler is a .NET Core library, written in C#, that comes with a console application project which uses the library to:
+1. Decompile APK files that are given as input by the use.
+2. Parse AndroidManifest.xml.
+3. Parse .smali files.
+4. Parse application's X509Certificate, if found.
+5. Export the extracted data from the Manifest and the smali files into one tabbed .xlsx spreadsheet.
+6. Export certificate info into a .txt file.
 
-Screenshots corresponding to the second functionality
-![ScreenShot](/Docs/Screenshots/extract_from_file.PNG)
 
-Properties available for extraction from the AndroidManifest.xml are listed below.
-1. PackageName,
-2. CompileSdkVersion,
-3. Permissions (List),
-4. Intents (List),
-5. Activities (List),
-6. Services (List),
-7. Receivers (List),
-8. Providers (List).
+##Requirements
+
+- Apktool
+- Java 8+ (JRE 1.8+)
+
+
+##Information the library extracts
+
+- Package Name
+- Compile SDK Version
+- Permissions
+- Intents
+- Services
+- Activities
+- Broadcast Receivers
+- Content Providers
+- IP Addresses
+- URLs
+- API Calls
+- Certificate Information
+
+
+##Output Samples
+
+####Spreadsheet
+
+Permissions tab
+
+![Screenshot](/Docs/Screenshots/permissions_xlsx.png)
+
+
+Intents tab
+
+![Screenshot](/Docs/Screenshots/intents_xlsx.png)
+
+
+API Calls tab
+
+![Screenshot](/Docs/Screenshots/api_calls_xlsx.png)
+
+
+Certificate file
+
+![Screenshot](/Docs/Screenshots/certificate.png)
+
+
+##Performance
 
 Smali parsing performance (apk size, time elapsed in seconds, number of smali files):
 
@@ -48,5 +80,3 @@ Time - Size Chart
 Time - Number of Files Chart
 
 ![ScreenShot](/Docs/Screenshots/time-files.png)
-
-Requires: apktool, java 1.8+
