@@ -1,7 +1,7 @@
 # APKProfiler: An Android application decompilation and feature extraction library
 
 
-##What is it?
+## What is it?
 
 APKProfiler is a .NET Core library, written in C#, that comes with a console application project which uses the library to:
 1. Decompile APK files that are given as input by the use.
@@ -12,7 +12,7 @@ APKProfiler is a .NET Core library, written in C#, that comes with a console app
 6. Export certificate info into a .txt file.
 
 
-##Requirements
+## Requirements
 
 - Apktool
 - Java 8+ (JRE 1.8+)
@@ -34,9 +34,9 @@ APKProfiler is a .NET Core library, written in C#, that comes with a console app
 - Certificate Information
 
 
-##Output Samples
+## Output Samples
 
-####Spreadsheet
+#### Spreadsheet
 
 Permissions tab
 
@@ -58,7 +58,7 @@ Certificate file
 ![Screenshot](/Docs/Screenshots/certificate.png)
 
 
-##Performance
+## Performance
 
 Smali parsing performance (apk size, time elapsed in seconds, number of smali files):
 
