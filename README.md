@@ -18,7 +18,7 @@ APKProfiler is a .NET Core library, written in C#, that comes with a console app
 - Java 8+ (JRE 1.8+)
 
 
-##Information the library extracts
+## Information the library extracts
 
 - Package Name
 - Compile SDK Version
